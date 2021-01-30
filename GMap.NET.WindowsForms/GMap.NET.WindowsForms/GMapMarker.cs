@@ -258,6 +258,10 @@ namespace GMap.NET.WindowsForms
          //
       }
 
+      public virtual bool Contains(int X, int Y)
+      {
+         return LocalArea.Contains(X, Y);
+      }
 #if PocketPC
       protected void DrawImageUnscaled(Graphics g, Bitmap inBmp, int x, int y)
       {

@@ -1871,7 +1871,7 @@ namespace GMap.NET.WindowsForms
                                     rp.OffsetNegative(Core.renderOffset);
                                 }
 #endif
-                                if (m.LocalArea.Contains((int)rp.X, (int)rp.Y))
+                                if (m.Contains((int)rp.X, (int)rp.Y))
                                 {
                                     if (OnMarkerClick != null)
                                     {
@@ -1960,7 +1960,7 @@ namespace GMap.NET.WindowsForms
                                     rp.OffsetNegative(Core.renderOffset);
                                 }
 #endif
-                                if (m.LocalArea.Contains((int)rp.X, (int)rp.Y))
+                                if (m.Contains((int)rp.X, (int)rp.Y))
                                 {
                                     if (OnMarkerDoubleClick != null)
                                     {
@@ -2168,7 +2168,7 @@ namespace GMap.NET.WindowsForms
                                             rp.OffsetNegative(Core.renderOffset);
                                         }
 #endif
-                                        if (m.LocalArea.Contains((int)rp.X, (int)rp.Y))
+                                        if (m.Contains((int)rp.X, (int)rp.Y))
                                         {
                                             if (!m.IsMouseOver)
                                             {
