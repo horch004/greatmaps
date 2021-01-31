@@ -536,7 +536,9 @@ namespace GMap.NET.WindowsForms
 #else
       internal readonly Font MissingDataFont = new Font(FontFamily.GenericSansSerif, 8, FontStyle.Regular);
 #endif
-        Font ScaleFont = new Font(FontFamily.GenericSansSerif, 5, FontStyle.Italic);
+        public Font ScaleFont { get; set; } = new Font(FontFamily.GenericSansSerif, 5, FontStyle.Italic);
+      public Brush ScaleBrush { get; set; } = Brushes.Blue;
+
         internal readonly StringFormat CenterFormat = new StringFormat();
         internal readonly StringFormat BottomFormat = new StringFormat();
 #if !PocketPC
@@ -1542,33 +1544,33 @@ namespace GMap.NET.WindowsForms
             {
                 if (Width > Core.pxRes5000km)
                 {
-                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes5000km, 10);
-                    g.DrawString("5000Km", ScaleFont, Brushes.Blue, Core.pxRes5000km + 10, 11);
+                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes5000km, ScaleFont.Height + 3);
+                    g.DrawString("5000Km", ScaleFont, ScaleBrush, Core.pxRes5000km + 10, 11);
                 }
                 if (Width > Core.pxRes1000km)
                 {
-                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes1000km, 10);
-                    g.DrawString("1000Km", ScaleFont, Brushes.Blue, Core.pxRes1000km + 10, 11);
+                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes1000km, ScaleFont.Height + 3);
+                    g.DrawString("1000Km", ScaleFont, ScaleBrush, Core.pxRes1000km + 10, 11);
                 }
                 if (Width > Core.pxRes100km && Zoom > 2)
                 {
-                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes100km, 10);
-                    g.DrawString("100Km", ScaleFont, Brushes.Blue, Core.pxRes100km + 10, 11);
+                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes100km, ScaleFont.Height + 3);
+                    g.DrawString("100Km", ScaleFont, ScaleBrush, Core.pxRes100km + 10, 11);
                 }
                 if (Width > Core.pxRes10km && Zoom > 5)
                 {
-                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes10km, 10);
-                    g.DrawString("10Km", ScaleFont, Brushes.Blue, Core.pxRes10km + 10, 11);
+                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes10km, ScaleFont.Height + 3);
+                    g.DrawString("10Km", ScaleFont, ScaleBrush, Core.pxRes10km + 10, 11);
                 }
                 if (Width > Core.pxRes1000m && Zoom >= 10)
                 {
-                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes1000m, 10);
-                    g.DrawString("1000m", ScaleFont, Brushes.Blue, Core.pxRes1000m + 10, 11);
+                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes1000m, ScaleFont.Height + 3);
+                    g.DrawString("1000m", ScaleFont, ScaleBrush, Core.pxRes1000m + 10, 11);
                 }
                 if (Width > Core.pxRes100m && Zoom > 11)
                 {
-                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes100m, 10);
-                    g.DrawString("100m", ScaleFont, Brushes.Blue, Core.pxRes100m + 9, 11);
+                    g.DrawRectangle(ScalePen, 10, 10, Core.pxRes100m, ScaleFont.Height + 3);
+                    g.DrawString("100m", ScaleFont, ScaleBrush, Core.pxRes100m + 9, 11);
                 }
             }
 #endif
