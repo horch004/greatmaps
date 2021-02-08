@@ -1474,10 +1474,19 @@ namespace GMap.NET.WindowsForms
                 }
             }
 
-            // center in virtual space...
+            // Now the tooltips
+            foreach (GMapOverlay o in Overlays)
+            {
+               if (o.IsVisibile)
+               {
+                  o.OnRenderTooltips(g);
+               }
+            }
+
+         // center in virtual space...
 #if DEBUG
 #if !PocketPC
-            if (!IsRotated)
+         if (!IsRotated)
 #endif
             {
                 g.DrawLine(ScalePen, -20, 0, 20, 0);

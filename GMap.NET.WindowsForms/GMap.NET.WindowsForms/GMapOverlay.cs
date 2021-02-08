@@ -346,7 +346,7 @@ namespace GMap.NET.WindowsForms
                }
 
                // tooltips above
-               foreach(GMapMarker m in Markers)
+               /*foreach(GMapMarker m in Markers)
                {
                   //if(m.ToolTip != null && m.IsVisible && Control.Core.currentRegion.Contains(m.LocalPosition.X, m.LocalPosition.Y))
                   if(m.ToolTip != null && m.IsVisible)
@@ -355,6 +355,25 @@ namespace GMap.NET.WindowsForms
                      {
                         m.ToolTip.OnRender(g);
                      }
+                  }
+               }*/
+            }
+         }
+      }
+
+      public virtual void OnRenderTooltips(Graphics g)
+      {
+         if (Control.MarkersEnabled)
+         {
+            // tooltips above
+            foreach (GMapMarker m in Markers)
+            {
+               //if(m.ToolTip != null && m.IsVisible && Control.Core.currentRegion.Contains(m.LocalPosition.X, m.LocalPosition.Y))
+               if (m.ToolTip != null && m.IsVisible)
+               {
+                  if (!string.IsNullOrEmpty(m.ToolTipText) && (m.ToolTipMode == MarkerTooltipMode.Always || (m.ToolTipMode == MarkerTooltipMode.OnMouseOver && m.IsMouseOver)))
+                  {
+                     m.ToolTip.OnRender(g);
                   }
                }
             }
