@@ -5,7 +5,7 @@ namespace GMap.NET.WindowsForms.Markers
    using System.Collections.Generic;
 
 #if !PocketPC
-   using System.Windows.Forms.Properties;
+   using GMap.NET.WindowsForms.Properties;
    using System;
    using System.Runtime.Serialization;
 #else
